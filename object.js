@@ -12,12 +12,41 @@ have your first name, last name, age, dob(date of birth), favorite food (3),favo
 
 
 
-var persons = [
-  { name: { first: 'John', last: 'Hob' }, age: 35 },
-  { name: { first: 'Alex', last: 'Mercer' }, age: 25 },
-  { name: { first: 'Alice', last: 'Zaheer' }, age: 24 },
-  { name: { first: 'Zues', last: 'Odin' }, age: 55 },
-  { name: { first: 'Soso', last: 'Al-Amora' }, age: 67 }
+var persons = [{
+    name: {
+      first: 'John',
+      last: 'Hob'
+    },
+    age: 35
+  },
+  {
+    name: {
+      first: 'Alex',
+      last: 'Mercer'
+    },
+    age: 25
+  },
+  {
+    name: {
+      first: 'Alice',
+      last: 'Zaheer'
+    },
+    age: 24
+  },
+  {
+    name: {
+      first: 'Zues',
+      last: 'Odin'
+    },
+    age: 55
+  },
+  {
+    name: {
+      first: 'Soso',
+      last: 'Al-Amora'
+    },
+    age: 67
+  }
 ];
 
 /*
@@ -30,6 +59,20 @@ and return all the first name of the person insides
 Ex: firstName(persons) => ['John', 'Alex', 'Alice', 'Thor', 'Soso']
 */
 
+var res = [];
+
+function firstName(persons) {
+  for (i = 0; i < persons.length; i++) {
+
+    res[i] = persons[i].name['first'];
+  }
+
+  return res;
+
+}
+
+console.log(firstName(persons))
+
 
 /*
 3
@@ -37,10 +80,19 @@ Using the varabile persons
 Create a function called averageAge
 that accept an object
 and return the average age of those persons
-
 Ex: averageAge(persons) => 41.2
 */
+function averageAge(persons) {
+  res = 0;
+  for (var i = 0; i < persons.length; i++) {
 
+
+    res += persons[i].age / 2
+  }
+  return res
+}
+
+console.log(averageAge(persons))
 
 /*
 4
@@ -52,6 +104,30 @@ and return the full name of the older person
 Ex: olderPerson(persons) => "Soso Al-Amora"
 */
 
+function olderPerson(person) {
+  var maxEge = persons[0].age;
+  var olderName = "";
+
+  for (var i = 0; i < persons.length; i++) {
+    if (maxEge < persons[i].age) {
+      maxEage = person[i].age;
+      olderName = persons[i]['name']['first'] + ' ' + persons[i]['name']['last'];
+    }
+  }
+
+  return olderName;
+
+}
+
+
+// console.log()
+
+
+
+
+
+
+
 
 /*
 5
@@ -62,6 +138,21 @@ and return the full name of the person have longest full name
 
 Ex: longestName(persons) => "Soso Al-Amora"
 */
+function longestName(persons) {
+  var perlength = persons[0].name.first + persons[0].name.last
+  var result = "";
+  for (var i = 0; i < persons.length; i++) {
+    // result = persons[i].name.first + persons[i].name.last
+    if (persons[i].name.first.length + persons[i].name.last.length < perlength.length) {
+
+      perlength = result
+
+    };
+  };
+  return result;
+};
+
+
 
 
 /*
@@ -73,6 +164,20 @@ and return the full name of the person have longest full name
 
 Ex: longestName(persons) => "Soso Al-Amora"
 */
+function longestName(persons) {
+  var perlength = persons[0].name.first + persons[0].name.last
+  var result = "";
+  for (var i = 0; i < persons.length; i++) {
+    // result = persons[i].name.first + persons[i].name.last
+    if (persons[i].name.first.length + persons[i].name.last.length < perlength.length) {
+
+      perlength = result
+
+    };
+  };
+  return result;
+};
+
 
 //////////////////////////////////////////////////////////////////
 
@@ -99,7 +204,22 @@ Ex: repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"
 }
 */
 
+function repeatWord(string) {
+  string = string.toLowerCase();
+  string = string.split(" ");
+  obj = {};
+  for (var i = 0; i < string.length; i++) {
+    var counter = 0;
 
+    for (let j = 0; j < string.length; j++) {
+      if (string[i] === string[j]) {
+        counter++;
+      }
+    }
+    obj[string[i]] = counter
+  }
+  return obj;
+}
 
 /*
 8
@@ -112,7 +232,22 @@ and return an object that represents how many times each char repeat
 Ex: repeatChar("mamababatetacedo")
 => { m:2,  a:5, b:2, t2:, e:2, c:1, d:1, o:1}
 */
+function repeatChar(string) {
+  string = string.toLowerCase();
+  string = string.split("");
+  obj = {};
+  for (var i = 0; i < string.length; i++) {
+    var counter = 0;
 
+    for (let j = 0; j < string.length; j++) {
+      if (string[i] === string[j]) {
+        counter++;
+      }
+    }
+    obj[string[i]] = counter
+  }
+  return obj;
+}
 
 /*
 9
@@ -123,7 +258,10 @@ and return an object have the key that inside the array
 Ex: selectFromObject({a: 1, cat: 3}, ['a', 'cat', 'd'])
 =>  {a: 1, cat: 3}
 */
+function selectFromObject (){
 
+  
+}
 
 /*
 10
